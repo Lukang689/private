@@ -1,0 +1,697 @@
+@import 'keyframes.scss';
+* {
+  list-style-type: none;
+  text-decoration: none;
+  color: #000;
+}
+html,body {
+  width: 100%;
+}
+$container--width: 100%;
+$nav--width: 1220px;
+$nav--height: 74px;
+$header-logo--width: 138px;
+$header-logo--height: 47px;
+$header-logo-image--width: 138px;
+$header-logo-image--height: 94px;
+$nav-bar--width: 604px;
+$nav-bar--height: 71px;
+$header-join-us--width: 88px;
+$header-join-us--height: 37px;
+$header-slide-container--height: 640px;
+$header-slide-content--width: 960px;
+$header-slide-content--height: 261px;
+.container {
+  width: 100%;
+  display: relative;
+  .nav {
+    width: $nav--width;
+    height: $nav--height;
+    position: absolute;
+    left: 50%;
+    margin-left: - ($nav--width) / 2;
+    // border: 1px red solid;
+    z-index: 10;
+    .header-logo {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: - ($header-logo--height) / 2;
+      display: inline-block;
+      width: $header-logo--width;
+      height: $header-logo--height;
+      background: url("../img/yw-logo.png") no-repeat left top;
+      background-size: $header-logo--width auto;
+      h1 {
+        visibility: hidden;
+      }
+    }
+    .nav-bar {
+      display: table;
+      width: $nav-bar--width;
+      height: $nav-bar--height;
+      margin: 0 auto;
+      .nav-bar-item {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        .item-a {
+          display: inline-block;
+          width: 100%;
+          height: $nav-bar--height;
+          line-height: $nav-bar--height;
+          text-align: center;
+          font-size: 15px;
+          color: #fff;
+          &:hover {
+            // border-bottom: 2px solid #fff;
+            box-shadow: 0 3px #fff;
+            background-color: hsla(0, 0%, 100%, .25);
+          }
+        }
+      }
+    }
+    .header-join-us {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      width: $header-join-us--width;
+      height: $header-join-us--height;
+      line-height: $header-join-us--height;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: - ($header-join-us--height) / 2;
+      border: 1px #fff solid;
+      border-radius: 2px;
+      font-size: 15px;
+      color: #fff;
+      &:hover {
+        background-color: rgba(0,0,0,.1);
+      }
+    }
+  }
+  .header-slide-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-slide-container--height;
+    text-align: center;
+    .base-style {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: $header-slide-container--height;
+    }
+    .header-slide-first {
+      @extend .base-style;
+      background: url("../img/yw-hd-ip.jpg") no-repeat center;
+      background-size: cover;
+    }
+    .header-slide-second {
+      @extend .base-style;
+      background: url("../img/yw-hd-qd.png") no-repeat center;
+      background-size: cover;
+      display: none;
+    }
+    .header-slide-third {
+      @extend .base-style;
+      background: url("../img/yw-hd-ft.png") no-repeat center;
+      background-size: cover;
+      display: none;
+    }
+    .header-slide-content {
+      width: $header-slide-content--width;
+      height: $header-slide-content--height;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: - ($header-slide-content--height) / 2;
+      margin-left: - ($header-slide-content--width) / 2;
+      .slide-content-words-animation {
+        -webkit-animation: fadeInUp 1s ease-in-out .3s forwards;
+        animation: fadeInUp 1s ease-in-out .3s forwards;
+      }
+      .slide-content-h1 {
+        text-align: center;
+        font-size: 64px;
+        font-weight: 400;
+        color: #fff;
+        @extend .slide-content-words-animation;
+      }
+      .slide-content-p {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 300;
+        color: #fff;
+        @extend .slide-content-words-animation;
+        // animation-delay: .4s;
+        // -webkit-animation-delay: .4s;
+      }
+      .slide-get-more {
+        display: inline-block;
+        width: 156px;
+        height: 49px;
+        background-color: transparent;
+        font-size: 14px;
+        line-height: 49px;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        @extend .slide-content-words-animation;
+        &:hover {
+          background-color: rgba(0,0,0,.1);
+        }
+      }
+    }
+    .header-slide-button {
+      width: 120px;
+      // height: 40px;
+      font-size: 0;
+      // background-color: rgba(0,0,0,.1);
+      // border: 1px solid #f00;
+      position: absolute;
+      left: 50%;
+      margin-left: - 60px;
+      bottom: 48px;
+      z-index: 1;
+      // text-align: justify;
+      .slide-button {
+        display: inline-block;
+        width: 32px;
+        height: 4px;
+        margin: 0 4px;
+        background-color: rgba(255,255,255,.3);
+        &:hover {
+          background-color: rgba(255,255,255,.6);
+        }
+        &:focus {
+          background-color: rgba(255,255,255,1);
+        }
+      }
+    }
+  }
+  .main {
+    position: relative;
+    top: 640px;
+    overflow: hidden;
+    .construction {
+      width: 1220px;
+      height: 392px;
+      margin: 0 auto;
+      .describe {
+        width: 688px;
+        height: 129px;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        color: #3e4652;
+        font-size: 18px;
+        text-shadow: 0 1px #fff;
+        line-height: 1.8;
+        position: relative;
+        font-weight: 300;
+        padding-top: 50px;
+        padding-bottom: 40px;
+      }
+      .describe::before {
+        width: 52px;
+        height: 44px;
+        content: "";
+        position: absolute;
+        left: -100px;
+        top: 70px;
+        background: url(../img/yw-db-arr.png);
+        background-position: 0 0;
+      }
+      .describe::after {
+        width: 52px;
+        height: 44px;
+        content: "";
+        position: absolute;
+        right: -100px;
+        top: 70px;
+        background: url(../img/yw-db-arr.png);
+        background-position: -52px 0;
+      }
+      .line {
+        display: block;
+        width: 120px;
+        height: 1px;
+        margin: 0 auto;
+        position: relative;
+        // background-color: red;
+        &::before {
+          content: "";
+          position: absolute;  // 这里为什么必须使用绝对定位才能显示这个伪元素
+          // 当存在文本内容时（content值不为空），可以不使用绝对定位，文本和背景色都可以显示。
+          // content 的值为空时，伪元素必须使用绝对定位才能显示背景色，使用相对定位是不可以的。
+          // position: relative;
+          // top: 0;
+          // left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #d3dce0;
+          // background-color: red;
+          // top: -80px;
+        }     
+      }
+      .view {
+        width: 1220px;
+        height: 222px;
+        margin: 0 auto;
+        padding: 0 12px;
+        padding-top: 40px;
+        text-align: justify;
+        // line-height: 0;
+        overflow: hidden;
+        position: relative;
+        // text-align: center;
+        .view-dl {
+          // display: inline-block;
+          width: 231px;
+          height: 167px;
+          font-weight: 400;
+          // outline: 2px red solid;
+          text-align: center;
+          position: relative;
+          .view-dt {
+            width: 100%;
+            height: 84px;
+            color: #3385ff;
+            .view-icon {
+              display: block;
+              width: 60px;
+              height: 60px;
+              // margin: -40px auto 0;
+              margin: 10px auto;
+              background-size: cover;
+              // outline: 2px solid red;
+            }
+            .view-icon-first {
+              background: url(../img/icons-pbm4.png) no-repeat -205px -8px;
+            }
+            .view-icon-second {
+              background: url(../img/icons-pbm4.png) no-repeat -63px 0;
+            }
+            .view-icon-third {
+              background: url(../img/icons-pbm4.png) no-repeat -131px -2px;
+            }
+            .view-icon-forth {
+              background: url(../img/icons-pbm4.png) no-repeat 0 -6px;
+            }
+            .view-huge {
+              color: #3385ff;
+            }
+          }
+          .view-dd {
+            // display: inline-block;
+            width: 203px;
+            height: 63px;
+            // margin: 0 auto;
+            // word-wrap: break-word;
+            margin: 20px 1em 0;
+            color: #717678;
+            font-size: 14px;
+            word-break: break-all;
+          }
+        }
+        .view-dl-first,
+        .view-dl-second,
+        .view-dl-third {
+          float: left;
+        }
+        .view-dl-second,
+        .view-dl-third {
+          margin-left: 7.5%;
+        }
+        .view-dl-forth {
+          float: right;
+        }
+      }
+    }
+    .copyright {
+      position: relative;
+      top: 100px;
+      &::before {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(31,33,35,.8);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        content: "";
+      }
+      .copyright-title {
+        position: absolute;
+        font-size: 28px;
+        font-weight: 500;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        top: 60px;
+        color: #fff;
+      }
+      .copyright-move {
+        position: relative;
+        height: 140px;
+        left: 0;
+        top: -15px;
+        // outline: 2px solid red;
+        overflow: hidden;
+        .copyright-move-item {
+          width: 7200px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          will-change: transform;
+          // outline: 2px solid red;
+        }
+        .copyright-move-first {
+          background: url(../img/book-line1.jpg) repeat-x;
+          // background-clip: content-box;
+        }
+        .copyright-move-second {
+          background: url(../img/book-line3.jpg) repeat-x;
+          // background-clip: content-box;
+        }
+        .copyright-move-third {
+          background: url(../img/book-line4.jpg) repeat-x;
+          // background-clip: content-box;
+        }
+      }
+    }
+    .book-show {
+      width: 100%;
+      height: 525px;
+      position: relative;
+      transform-style: preserve-3d;  //  子元素保留3d变换后的位置
+      perspective: 1800px;  // 让子元素获得透视效果
+      z-index: 1;
+      top: - 250px;
+      left: 0;
+      // overflow: hidden;
+      .book-show-pic {
+        // width: 236px;
+        // height: 314px;
+        width: 197px;
+        height: 262px;
+        object-fit: cover;  // 这个相当于给 div 设置：background-size: cover; 类似。
+        position: absolute;
+        // left: calc(50% - 99px);
+        transition: .8s ease-in-out;
+        left: calc(50% - 108px);
+        box-shadow: 0 6px 10px rgba(0,0,0,.3);
+        border-radius: 4px;
+        filter: brightness(70%);
+        bottom: 0;
+      }
+      .book-show-describe {
+        width: 600px;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 100px;
+        color: #fff;
+        font-size: 18px;
+        z-index: 2;
+        text-align: center;
+        font-weight: 300;
+        line-height: 32px;
+        .book-show-describe-text {
+          color: #fff;
+          display: none;
+        }
+      }
+    }
+    .mobile-intro {
+      position: relative;
+      top: -180px;
+      .unorder-list {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin: 0 auto;
+        width: 525px;
+        font-weight: 400;
+        text-align: justify;
+        .list-item {
+          display: inline-block;
+          text-indent: 1px;
+          line-height: 1.5;
+          padding-bottom: 10px;
+          font-size: 14px;
+          transition: color .4s ease-in-out 0;
+          color: #717678;
+          &:hover,
+          &:focus {
+            color: #3385ff;
+            outline: none;
+          }
+        }
+        .list-bottom-line {
+          display: inline-block;
+          width: 99%;
+          height: 1px;
+          vertical-align: bottom;
+          background-color: #bcc1cc;
+          opacity: .5;
+          position: relative;
+          top: -15px;
+        }
+        .bottom-short-line {
+          display: inline-block;
+          position: absolute;
+          width: 51px;
+          height: 3px;
+          // vertical-align: bottom;
+          background-color: #3385ff;
+          bottom: 14px;
+          left: 0;
+          transition: all .2s ease-in-out 0s;
+          // -webkit-transition: all .25s;
+        }
+      }
+      .product-intro {
+        position: relative;
+        left: 0;
+        top: 40px;
+        margin: 0 auto;
+        width: 1220px;
+        height: 630px;
+        overflow: hidden;
+        .product-name,
+        .product-detail,
+        .product-pic,
+        .get-more {
+          position: relative;
+          left: 0;
+          top: 0;
+          margin: 0 auto;
+        }
+        .product-detail {
+          text-align: center;
+          font-size: 18px;
+          font-weight: 300;
+          margin: 40px 0 40px 0;
+        }
+        .product-name {
+          background-size: cover;
+          height: 88px;
+        }
+        .product-name-first {
+          width: 203px;
+          background: url(../img/yw-h-qq.png) no-repeat top left;
+        }
+        .product-name-second {
+          width: 187px;
+          background: url(../img/yw-h-qd2.png) no-repeat top left;
+          margin-top: 20px;
+
+        }
+        .product-name-third {
+          width: 207px;
+          background: url(../img/yw-h-zj.png) no-repeat top left;
+        }
+        .product-name-forth {
+          width: 260px;
+          background: url(../img/yw-h-wbn2.png) no-repeat top left;
+        }
+        .product-name-fifth {
+          width: 207px;
+          background: url(../img/yw-h-hx.png) no-repeat top left;
+        }
+        .get-more {
+          position: relative;
+          left: calc(50% - 64px);
+          top: - 500px;
+          display: inline-block;
+          width: 128px;
+          height: 48px;
+          border-radius: 2px;
+          font-size: 14px;
+          text-align: center;
+          line-height: 48px;
+          color: #3385ff;
+          border: 1px solid #3385ff;
+          &:hover {
+            background-color: rgba(63,127,224,.1);
+          }
+        }
+        .product-pic {
+          position: relative;
+          width: 700px;
+          top: 100px;
+          left: calc(50% - 485px);
+          // vertical-align: bottom;
+          z-index: -1;
+          // margin: 0; 
+          // padding: 0;
+          // border: 0;
+        }
+      }
+      .product-intro-first,
+      .product-intro-second,
+      .product-intro-third,
+      .product-intro-forth,
+      .product-intro-fifth {
+        position: absolute;
+        top: 80px;
+        visibility: hidden;
+        left: 50%;
+        margin-left: - 610px;
+      }
+      .product-intro-first {
+        visibility: visible;
+      }
+    }
+    .brand {
+      width: 100%;
+      height: 720px;
+      padding-top: 30px;
+      background-color: #212737;
+      color: #fff;
+      // position: relative;
+      // position: absolute;
+      // top: -250px;
+      margin-top: 480px;
+      position: relative;
+      z-index: 1;
+      z-index: 10;
+      .brand-header {
+        margin: 50px 0 40px 0;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 400;
+        color: #fff;
+      }
+      .brand-list {
+        // text-align: justify;
+        width: 1220px;
+        height: 317px;
+        // border: red solid 5px;
+        margin: 0 auto;
+        #brand-link--first {
+          opacity: 1;
+        } 
+        .brand-link {
+          display: inline-block;
+          width: 138px;
+          height: 58px;
+          line-height: 1.5;
+          margin: 0 50px 20px 50px;
+          vertical-align: top;
+          position: relative;
+          cursor: pointer;
+          transition: opacity .25s;
+          opacity: .3;
+          // border: 2px solid green;
+          background-color: transparent;
+          // &:hover,
+          // &:focus {
+          //   // filter: brightness(200%);
+          //   opacity: 1;
+          // }
+          .brand-icon {
+            position: absolute;
+            clip: rect(0 200px 100px 52px);
+            // left: 50%;
+            // top: 50%;
+            transform: scale(0.7);
+            display: inline-block;
+            width: 200px;
+            height: 80px;
+            background-image: url(../img/icons-brand3.png);
+            background-repeat: no-repeat;
+            // border: yellow solid 2px;
+          }
+          .icon-qidian {
+            background-position: -1px -480px;
+          }
+          .icon-chuangshi {
+            background-position: -1px 0;
+          }
+          .icon-yunqi {
+            background-position: -17px -1200px;
+          }
+          .icon-hongxiu {
+            background-position: 0 -80px;
+          }
+          .icon-xiaoxiang {
+            background-position: -8px -880px;
+          }
+          .icon-qidiannvsheng {
+            background-position: -10px -400px;
+          }
+          .icon-xiaoshuo {
+            background-position: -1px -960px;
+          }
+          .icon-yanqing {
+            background-position: -1px -1040px;
+          }
+          .icon-tianfang {
+            background-position: -1px -800px;
+          }
+          .icon-lanren {
+            background-position: -1px -320px;
+          }
+          .icon-QQyuedu {
+            background-position: -1px -640px;
+          }
+          .icon-qidiandushu {
+            background-position: -1px -560px;
+          }
+          .icon-zuojia {
+            background-position: -1px -1360px;
+          }
+          .icon-webnovel {
+            background: url(../img/wbn.png) center no-repeat;
+          }
+          .icon-hongxiu {
+            background: url(../img/hx.png) no-repeat; 
+          }
+          .icon-yuanqi {
+            background: url(../img/yq.png) no-repeat;
+          }
+          .icon-zhongzhi {
+            background-position: -1px -1280px;
+          }
+          .icon-jushi {
+            background-position: 0px -240px;
+          }
+          .icon-huawen {
+            background-position: 0 -160px;
+          }
+          .brand-title {
+            text-indent: -10000px;
+          }
+        }
+      }
+    }
+  }
+}

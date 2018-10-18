@@ -1,0 +1,17 @@
+{
+  "name": "yuewen.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "lukang <lukang8596@outlook.com>",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-css": "^0.1.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-image": "^4.3.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-import": "^1.0.0",
+    "gulp-uglify": "^3.0.0"
+  }
+}
