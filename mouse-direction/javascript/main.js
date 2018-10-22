@@ -30,7 +30,7 @@ var MouseDirection = function (element, opts) {
       if (!rect.height) {
           rect.height = rect.bottom - rect.top;
       }
-
+      
       //求各个点坐标 注意y坐标应该转换为负值，因为浏览器可视区域左上角为(0,0)，整个可视区域属于第四象限
       x1 = rect.left;
       y1 = -rect.top;
